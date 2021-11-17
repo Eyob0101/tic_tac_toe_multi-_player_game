@@ -79,26 +79,27 @@ def player_two_move():
 
 def main_game():
 
-    print("welcome to tic tac toe")
-    player_one = input("please put name for player one who will be playing as (X): ")
-    player_two = input("please put name for player two who will be playing as (O): ")
-    print_board(board)
-    while not is_board_full(board):
-        if not (is_winner(board, "O")):
-            player_one_move()
-            print_board(board)
-        else:
-            print(f" {player_two} have won the game")
-            break
+    while True:
+        print("welcome to tic tac toe")
+        player_one = input("please put name for player one who will be playing as (X): ")
+        player_two = input("please put name for player two who will be playing as (O): ")
+        print_board(board)
+        while not is_board_full(board):
+            if not (is_winner(board, "O")):
+                player_one_move()
+                print_board(board)
+            else:
+                print(f" {player_two} have won the game")
+                break
 
-        if not (is_winner(board, "X")):
-            player_two_move()
-            print_board(board)
-        else:
-            print(f" {player_one} have won the game ")
-            break
-    if is_board_full(board):
-        print("Tie Game")
+            if not (is_winner(board, "X")):
+                player_two_move()
+                print_board(board)
+            else:
+                print(f" {player_one} have won the game ")
+                break
+        if is_board_full(board):
+            print("Tie Game")
 
 
 
